@@ -1,0 +1,48 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <style lang="en" type="text/css" id="night-mode-pro-style">
+        body {
+            background-color: transparent;
+        }
+    </style>
+	<title>AR Music</title>
+    <meta name="viewport" content="width=device-width, user-scalable=yes, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="shortcut icon" href="https://img.icons8.com/office/344/musical-notes.png" type="image/x-icon">
+	<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+	<script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+	<script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+	<a-scene embedded arjs="detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+
+		<a-assets>
+			<img id="drums" src="assets/drums.png">
+			<img id="guitar" src="assets/guitar.png">
+			<img id="mic" src="assets/mic.png">
+			<img id="piano" src="assets/piano.png">
+		</a-assets>
+
+		<a-marker class="ar-marker" id="drums-marker" type='barcode' value='0'>
+			<a-image src="#drums" rotation="90 0 0"></a-image>
+		</a-marker>
+		<a-marker class="ar-marker" id="guitar-marker" type='barcode' value='1'>
+			<a-image src="#guitar" rotation="90 0 0"></a-image>
+		</a-marker>
+		<a-marker class="ar-marker" id="mic-marker" type='barcode' value='2'>
+			<a-image src="#mic" rotation="90 0 0"></a-image>
+		</a-marker>
+		<a-marker class="ar-marker" id="piano-marker" type='barcode' value='3'>
+			<a-image src="#piano" rotation="90 0 0"></a-image>
+		</a-marker>
+
+	    <!-- add a simple camera -->
+	    <a-entity camera></a-entity>
+	</a-scene>
+    <script src="script.js"></script>
+</body>
+
+</html>
